@@ -1,7 +1,5 @@
 {
   "name": "client",
-  "private": true,
-  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -31,5 +29,6 @@
     "typescript": "^5.2.2",
     "unplugin-icons": "^0.17.4",
     "vite": "^4.5.0"
-  }
+  },
+  "private": true
 }
