@@ -7,17 +7,17 @@
       "args": ["lint"],
       "problemMatcher": ["$eslint-stylish"],
       "icon": {
-        "color": "terminal.ansiMagenta",
+        "color": "terminal.ansiYellow",
         "id": "search"
       }
     },
     {
       "label": "Format code",
       "command": "pnpm",
-      "args": ["form"],
+      "args": ["format"],
       "problemMatcher": [],
       "icon": {
-        "color": "terminal.ansiMagenta",
+        "color": "terminal.ansiYellow",
         "id": "wand"
       }
     },
