@@ -7,8 +7,18 @@
       "args": ["lint"],
       "problemMatcher": ["$eslint-stylish"],
       "icon": {
-        "color": "terminal.ansiWhite",
+        "color": "terminal.ansiMagenta",
         "id": "search"
+      }
+    },
+    {
+      "label": "Format code",
+      "command": "pnpm",
+      "args": ["form"],
+      "problemMatcher": [],
+      "icon": {
+        "color": "terminal.ansiMagenta",
+        "id": "wand"
       }
     },
     {

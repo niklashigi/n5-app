@@ -3,7 +3,7 @@
     "format": "pnpm generate-prettierignore && prettier --write .",
     "lint": "eslint --ext .js,.cjs,.ts,.tsx --ignore-path .gitignore packages",
     "postinstall": "pnpm generate-prettierignore",
-    "generate-prettierignore": "cat .gitignore extra.prettierignore > .prettierignore"
+    "generate-prettierignore": "cat .gitignore lint.gitignore > .prettierignore"
   },
   "workspaces": [
     "./packages/*"
