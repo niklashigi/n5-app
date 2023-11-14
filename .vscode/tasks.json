@@ -2,27 +2,6 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Run client",
-      "group": "build",
-      "command": "pnpm",
-      "args": ["dev"],
-      "problemMatcher": [],
-      "options": {
-        "cwd": "${workspaceFolder}/packages/client"
-      },
-      "isBackground": true,
-      "runOptions": {
-        "runOn": "folderOpen"
-      },
-      "presentation": {
-        "reveal": "never"
-      },
-      "icon": {
-        "id": "device-desktop",
-        "color": "terminal.ansiCyan"
-      }
-    },
-    {
       "label": "Build server",
       "command": "pnpm",
       "args": ["dev:build"],
@@ -38,7 +17,7 @@
         "reveal": "never"
       },
       "icon": {
-        "id": "gear",
+        "id": "wrench",
         "color": "terminal.ansiCyan"
       }
     },
@@ -58,7 +37,28 @@
         "reveal": "never"
       },
       "icon": {
-        "id": "play",
+        "id": "server",
+        "color": "terminal.ansiCyan"
+      }
+    },
+    {
+      "label": "Run client",
+      "group": "build",
+      "command": "pnpm",
+      "args": ["dev"],
+      "problemMatcher": [],
+      "options": {
+        "cwd": "${workspaceFolder}/packages/client"
+      },
+      "isBackground": true,
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+      "presentation": {
+        "reveal": "never"
+      },
+      "icon": {
+        "id": "device-desktop",
         "color": "terminal.ansiCyan"
       }
     }
