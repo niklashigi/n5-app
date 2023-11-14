@@ -5,8 +5,10 @@
   "main": "./src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node-dev ./src/main.ts",
-    "start": "node ./build/main.js"
+    "dev:build": "esbuild --bundle src/main.ts --outdir=dist --sourcemap=linked --platform=node --packages=external --watch",
+    "dev:start": "node --watch --enable-source-maps --inspect dist/main.js",
+    "start": "node ./dist/main.js",
+    "postinstall": "prisma generate"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +16,7 @@
   "devDependencies": {
     "@types/express": "^4.17.16",
     "@types/node": "^18.11.18",
+    "esbuild": "^0.19.5",
     "prisma": "^4.9.0",
     "ts-node": "^10.9.1",
     "ts-node-dev": "^2.0.0",

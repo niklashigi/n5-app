@@ -23,3 +23,5 @@ node_modules
 # Prisma sqlite
 *dev.db*
 *migrations*
+
+/packages/server/dist

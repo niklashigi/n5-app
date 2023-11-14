@@ -1,0 +1,66 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run client",
+      "group": "build",
+      "command": "pnpm",
+      "args": ["dev"],
+      "problemMatcher": [],
+      "options": {
+        "cwd": "${workspaceFolder}/packages/client"
+      },
+      "isBackground": true,
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+      "presentation": {
+        "reveal": "never"
+      },
+      "icon": {
+        "id": "device-desktop",
+        "color": "terminal.ansiCyan"
+      }
+    },
+    {
+      "label": "Build server",
+      "command": "pnpm",
+      "args": ["dev:build"],
+      "options": {
+        "cwd": "${workspaceFolder}/packages/server"
+      },
+      "problemMatcher": [],
+      "isBackground": true,
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+      "presentation": {
+        "reveal": "never"
+      },
+      "icon": {
+        "id": "gear",
+        "color": "terminal.ansiCyan"
+      }
+    },
+    {
+      "label": "Run server",
+      "command": "pnpm",
+      "args": ["dev:start"],
+      "options": {
+        "cwd": "${workspaceFolder}/packages/server"
+      },
+      "problemMatcher": [],
+      "isBackground": true,
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+      "presentation": {
+        "reveal": "never"
+      },
+      "icon": {
+        "id": "play",
+        "color": "terminal.ansiCyan"
+      }
+    }
+  ]
+}

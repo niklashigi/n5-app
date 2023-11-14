@@ -5,8 +5,9 @@ export default function AddTodo() {
   const [title, setTitle] = useState('')
   const addTodoMutation = trpc.todo.create.useMutation()
   const trpcContext = trpc.useContext()
+
   return (
-    <div className='flex justify-between space-x-4'>
+    <form className='flex justify-between space-x-4'>
       <input
         value={title}
         onChange={e => setTitle(e.target.value)}
@@ -15,6 +16,7 @@ export default function AddTodo() {
         className='flex-grow rounded-md'
       />
       <button
+      type='submit'
         className='bg-blue-500 hover:bg-blue-600 active:bg-blue-500 text-white py-1 px-3 rounded-md'
         onClick={() => {
           addTodoMutation.mutate(
@@ -30,6 +32,6 @@ export default function AddTodo() {
       >
         Add todo
       </button>
-    </div>
+    </form>
   )
 }

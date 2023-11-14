@@ -1,24 +1,22 @@
-import { prisma } from '../lib/prismaClient'
-import { trpc } from '../lib/trpc'
-import { z } from 'zod'
+import { prisma } from "../lib/prismaClient";
+import { trpc } from "../lib/trpc";
+import { z } from "zod";
 
 export const todoRouter = trpc.router({
-  list: trpc.procedure.query(({ ctx }) => {
-    console.log(ctx.user)
-    // const todos = await prisma.todo.findMany()
-    // return todos
-    return prisma.todo.findMany()
+  list: trpc.procedure.query(async ({}) => {
+    const todos = await prisma.todo.findMany();
+    return todos;
   }),
   create: trpc.procedure
     .input(z.object({ title: z.string() }))
     .mutation(({ input }) => {
-      const title = input.title
+      const title = input.title;
       return prisma.todo.create({
         data: {
           title: title,
           isCompleted: false,
         },
-      })
+      });
     }),
   delete: trpc.procedure
     .input(z.object({ id: z.string() }))
@@ -27,7 +25,7 @@ export const todoRouter = trpc.router({
         where: {
           id: input.id,
         },
-      })
+      });
     }),
   update: trpc.procedure
     .input(z.object({ id: z.string(), isCompleted: z.boolean() }))
@@ -39,6 +37,6 @@ export const todoRouter = trpc.router({
         data: {
           isCompleted: input.isCompleted,
         },
-      })
+      });
     }),
-})
+});
