@@ -16,7 +16,7 @@ export default function AddTodo() {
           {
             onSuccess: () => {
               console.log("created a todo");
-              trpcContext.todo.list.invalidate();
+              void trpcContext.todo.list.invalidate();
               setTitle("");
             },
           },

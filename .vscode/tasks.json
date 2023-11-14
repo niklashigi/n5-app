@@ -2,6 +2,16 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "Lint code",
+      "command": "pnpm",
+      "args": ["lint"],
+      "problemMatcher": ["$eslint-stylish"],
+      "icon": {
+        "color": "terminal.ansiWhite",
+        "id": "search"
+      }
+    },
+    {
       "label": "Build server",
       "command": "pnpm",
       "args": ["dev:build"],

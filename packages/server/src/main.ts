@@ -1,4 +1,4 @@
-import express, { Application } from "express";
+import express, { type Application } from "express";
 import * as trpcExpress from "@trpc/server/adapters/express";
 import { appRouter } from "./router";
 import cors from "cors";

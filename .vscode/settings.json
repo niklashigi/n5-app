@@ -1,9 +1,29 @@
 {
   "editor.rulers": [80],
 
-  // Prettier for automatic code formatting
+  // Enable Prettier for automatic code formatting
   "[typescript][typescriptreact][javascript][json][jsonc][yaml][markdown]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // Enable ESLint to enforce code quality rules
+  "eslint.validate": ["javascript", "typescript"],
+  "editor.codeActionsOnSave": { "source.fixAll": true },
+
+  // Enable Prisma's own formatter for its schema file
+  "[prisma]": { "editor.formatOnSave": true },
+
+  // Disable automatic fetching of types (for better consistency with `tsc`)
+  "typescript.disableAutomaticTypeAcquisition": true,
+
+  // Automatically start watch tasks when opening the project
+  "task.allowAutomaticTasks": "on",
+
+  // Automatically attach debugger to Node.js processes with `--inspect`
+  "debug.javascript.autoAttachFilter": "onlyWithFlag",
+  "debug.javascript.terminalOptions": {
+    "skipFiles": ["<node_internals>/**", "node_modules/**"],
+    "sourceMaps": true
   }
 }

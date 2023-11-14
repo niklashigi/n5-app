@@ -6,9 +6,6 @@ import IconSquare from "~icons/tabler/square";
 import IconSquareCheckFilled from "~icons/tabler/square-check-filled";
 
 export default function ListTodos() {
-  function handleDelete() {}
-  function updateTodo() {}
-
   const response = trpc.todo.list.useQuery();
   const deleteMutation = trpc.todo.delete.useMutation();
   const updateMutation = trpc.todo.update.useMutation();
@@ -35,7 +32,7 @@ export default function ListTodos() {
               onClick={() =>
                 updateMutation.mutate(
                   { id: todo.id, isCompleted: !todo.isCompleted },
-                  { onSuccess: () => trpcContext.todo.list.invalidate() },
+                  { onSuccess: () => void trpcContext.todo.list.invalidate() },
                 )
               }
             >
@@ -63,7 +60,7 @@ export default function ListTodos() {
                   { id: todo.id },
                   {
                     onSuccess: () => {
-                      trpcContext.todo.list.invalidate();
+                      void trpcContext.todo.list.invalidate();
                     },
                   },
                 )
