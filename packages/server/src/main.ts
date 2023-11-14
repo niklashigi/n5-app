@@ -12,7 +12,7 @@ app.use(
   trpcExpress.createExpressMiddleware({
     router: appRouter,
     createContext: createContext,
-  })
+  }),
 );
 
 const PORT: number = Number(process.env.PORT) || 3000;
