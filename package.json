@@ -1,5 +1,13 @@
 {
+  "scripts": {
+    "format": "pnpm generate-prettierignore && prettier --write .",
+    "postinstall": "pnpm generate-prettierignore",
+    "generate-prettierignore": "cat .gitignore extra.prettierignore > .prettierignore"
+  },
   "workspaces": [
     "./packages/*"
-  ]
+  ],
+  "devDependencies": {
+    "prettier": "^3.1.0"
+  }
 }

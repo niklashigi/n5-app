@@ -1,0 +1,9 @@
+{
+  "editor.rulers": [80],
+
+  // Prettier for automatic code formatting
+  "[typescript][typescriptreact][javascript][json][jsonc][yaml][markdown]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
