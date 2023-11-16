@@ -1,10 +1,10 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { httpBatchLink } from "@trpc/client";
 import { useMemo } from "react";
+import { Switch, Route } from "wouter";
 
-import AddTodo from "./components/AddTodo";
-import ListTodos from "./components/ListTodos";
 import { trpc } from "./lib/trpc";
+import { TodosPage } from "./pages/TodosPage";
 
 function App() {
   const queryClient = useMemo(() => new QueryClient(), []);
@@ -27,9 +27,11 @@ function App() {
           <div className="py-8 text-center text-3xl font-bold text-gray-700">
             <h1>N5 App</h1>
           </div>
-          <div className="max-w-md mx-auto flex flex-col gap-y-4">
-            <ListTodos />
-            <AddTodo />
+          <div className="max-w-md mx-auto">
+            <Switch>
+              <Route path="/todos" component={TodosPage} />
+              <Route>Page not found!</Route>
+            </Switch>
           </div>
         </div>
       </QueryClientProvider>

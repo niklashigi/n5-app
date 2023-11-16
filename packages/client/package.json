@@ -14,7 +14,8 @@
     "clsx": "^2.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "server": "^1.0.38"
+    "server": "^1.0.38",
+    "wouter": "^2.12.1"
   },
   "devDependencies": {
     "@iconify-json/tabler": "^1.1.96",
