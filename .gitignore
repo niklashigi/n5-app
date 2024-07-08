@@ -2,6 +2,7 @@ node_modules
 
 /packages/server/dist
 /packages/server/prisma/dev.db.sqlite
+/packages/server/prisma/dev.db.sqlite-journal
 
 # We automatically copy `.gitignore` there in the workspace `postinstall` script
 /.prettierignore
