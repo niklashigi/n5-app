@@ -29,7 +29,7 @@ function App() {
           </div>
           <div className="max-w-md mx-auto">
             <Switch>
-              <Route path="/todos" component={TodosPage} />
+              <Route path="/" component={TodosPage} />
               <Route>Page not found!</Route>
             </Switch>
           </div>
