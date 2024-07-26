@@ -1,9 +1,0 @@
-{
-  "compilerOptions": { "noEmit": true, "strict": true },
-  "include": [
-    "./.eslintrc.cjs",
-    "./packages/client/vite.config.ts",
-    "./packages/client/postcss.config.cjs",
-    "./packages/client/tailwind.config.cjs"
-  ]
-}

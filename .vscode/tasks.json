@@ -2,16 +2,6 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Lint code",
-      "command": "pnpm",
-      "args": ["lint"],
-      "problemMatcher": ["$eslint-stylish"],
-      "icon": {
-        "color": "terminal.ansiYellow",
-        "id": "search"
-      }
-    },
-    {
       "label": "Format code",
       "command": "pnpm",
       "args": ["format"],

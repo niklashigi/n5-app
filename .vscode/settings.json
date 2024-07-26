@@ -7,10 +7,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
-  // Enable ESLint to enforce code quality rules
-  "eslint.validate": ["javascript", "typescript"],
-  "editor.codeActionsOnSave": { "source.fixAll": "explicit" },
-
   // Enable Prisma's own formatter for its schema file
   "[prisma]": { "editor.formatOnSave": true },
 

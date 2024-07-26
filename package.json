@@ -1,7 +1,6 @@
 {
   "scripts": {
     "format": "pnpm generate-prettierignore && prettier --write .",
-    "lint": "eslint --ext .js,.cjs,.ts,.tsx --ignore-path .gitignore packages",
     "postinstall": "pnpm generate-prettierignore",
     "generate-prettierignore": "cat .gitignore lint.gitignore > .prettierignore"
   },
@@ -9,10 +8,6 @@
     "./packages/*"
   ],
   "devDependencies": {
-    "@types/eslint": "^8.44.2",
-    "@typescript-eslint/eslint-plugin": "^6.3.0",
-    "@typescript-eslint/parser": "^6.3.0",
-    "eslint": "^8.47.0",
     "prettier": "^3.3.2"
   }
 }
