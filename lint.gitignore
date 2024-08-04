@@ -1,0 +1,3 @@
+# Combined with `.gitignore` into `.prettierignore`
+# (these files aren't ignored by git but they are ignored by Prettier)
+/pnpm-lock.yaml
