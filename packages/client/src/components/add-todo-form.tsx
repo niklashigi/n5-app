@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { trpc } from "../lib/trpc";
 
-export default function AddTodo() {
+export default function AddTodoForm() {
+  const addTodoMutation = trpc.todos.create.useMutation();
+  const trpcUtils = trpc.useUtils();
+
   const [title, setTitle] = useState("");
-  const addTodoMutation = trpc.todo.create.useMutation();
-  const trpcContext = trpc.useContext();
 
   return (
     <form
@@ -15,8 +16,7 @@ export default function AddTodo() {
           { title: title },
           {
             onSuccess: () => {
-              console.log("created a todo");
-              void trpcContext.todo.list.invalidate();
+              void trpcUtils.todos.list.invalidate();
               setTitle("");
             },
           },
@@ -25,7 +25,7 @@ export default function AddTodo() {
     >
       <input
         value={title}
-        onChange={(e) => setTitle(e.target.value)}
+        onChange={(event) => setTitle(event.target.value)}
         type="text"
         placeholder="Get milk..."
         className="flex-grow rounded-md"

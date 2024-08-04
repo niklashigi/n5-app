@@ -4,7 +4,7 @@ import { useMemo } from "react";
 import { Switch, Route } from "wouter";
 
 import { trpc } from "./lib/trpc";
-import { TodosPage } from "./pages/TodosPage";
+import { TodosPage } from "./pages/todos";
 
 function App() {
   const queryClient = useMemo(() => new QueryClient(), []);

@@ -5,10 +5,11 @@ export const createContext = ({
   req: _req,
   res: _res,
 }: trpcExpress.CreateExpressContextOptions) => {
-  // Authentication logic goes here
+  // TODO: Add authentication logic here (if needed)
 
   return {};
 };
 
 type Context = inferAsyncReturnType<typeof createContext>;
+
 export const trpc = initTRPC.context<Context>().create();

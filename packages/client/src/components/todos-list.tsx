@@ -1,15 +1,21 @@
-import { trpc } from "../lib/trpc";
 import clsx from "clsx";
+
+import { trpc } from "../lib/trpc";
 
 import IconX from "~icons/tabler/x";
 import IconSquare from "~icons/tabler/square";
 import IconSquareCheckFilled from "~icons/tabler/square-check-filled";
 
-export default function ListTodos() {
-  const response = trpc.todo.list.useQuery();
-  const deleteMutation = trpc.todo.delete.useMutation();
-  const updateMutation = trpc.todo.update.useMutation();
-  const trpcContext = trpc.useContext();
+export default function TodosList() {
+  const trpcUtils = trpc.useUtils();
+
+  const response = trpc.todos.list.useQuery();
+  const deleteMutation = trpc.todos.delete.useMutation({
+    onSuccess: () => void trpcUtils.todos.list.invalidate(),
+  });
+  const updateMutation = trpc.todos.update.useMutation({
+    onSuccess: () => void trpcUtils.todos.list.invalidate(),
+  });
 
   if (response.isError) {
     return <h2>Error...</h2>;
@@ -30,10 +36,10 @@ export default function ListTodos() {
             <button
               className="rounded text-sm hover:line-through cursor-pointer hover:text-black"
               onClick={() =>
-                updateMutation.mutate(
-                  { id: todo.id, isCompleted: !todo.isCompleted },
-                  { onSuccess: () => void trpcContext.todo.list.invalidate() },
-                )
+                updateMutation.mutate({
+                  id: todo.id,
+                  isCompleted: !todo.isCompleted,
+                })
               }
             >
               {todo.isCompleted ? (
@@ -55,16 +61,7 @@ export default function ListTodos() {
             </p>
 
             <button
-              onClick={() =>
-                deleteMutation.mutate(
-                  { id: todo.id },
-                  {
-                    onSuccess: () => {
-                      void trpcContext.todo.list.invalidate();
-                    },
-                  },
-                )
-              }
+              onClick={() => deleteMutation.mutate({ id: todo.id })}
               className="text-gray-300 hover:text-white hover:bg-red-500 p-1 rounded"
             >
               <IconX />
